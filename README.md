@@ -4,12 +4,11 @@
 
 Para poder trabajar con este repositorio, es necesario tener la versión 3.11.4 de Python y tener Git instalado en el sistema operativo. Se deben de seguir estos pasos para la correcta instalación:
 
-- Primero se clona este repositorio de forma local en la ubicación deseada.
+- Primero se clona este repositorio de forma local en la ubicación deseada. Esto va a generar una carpeta `proyect_hackaboss` que contiene todos los archivos y carpetas del proyecto.
 ```sh
 git clone https://github.com/cuicuidev/project_hackaboss
 
 ```
-Esto va a generar una carpeta proyect_hackaboss que contiene todos los archivos y carpetas del proyecto.
 
 - Después, hay que crear el entorno virtual con el siguiente comando:
 ```sh
