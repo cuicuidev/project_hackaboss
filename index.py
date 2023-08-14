@@ -1,7 +1,7 @@
 import streamlit as st
 
-from config import PAGE_CONFIG
-from route_paths import routepaths
+from root.config import PAGE_CONFIG
+from root.route_paths import routepaths
 
 def main():
 
