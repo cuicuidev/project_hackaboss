@@ -1,6 +1,8 @@
 /.env/
 
 __pycache__/
+/notebooks/steam_api.json
+/notebooks/
 
 *.csv
 
