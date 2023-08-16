@@ -1,2 +1,3 @@
 def nuevoRoute():
-    pass
+    nuevo = "hola"
+    return nuevo 
