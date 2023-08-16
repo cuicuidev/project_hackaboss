@@ -9,6 +9,11 @@ Para poder trabajar con este repositorio, es necesario tener la versión 3.11.4 
 git clone https://github.com/cuicuidev/project_hackaboss
 ```
 
+- Después de clonar el repo, hay que navegar hacia la carpeta que se ha creado:
+```sh
+cd project_hackaboss
+```
+
 - A continuación, cree el entorno virtual:
 ```sh
 python -m venv .env
