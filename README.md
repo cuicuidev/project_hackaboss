@@ -4,34 +4,41 @@
 
 Para poder trabajar con este repositorio, es necesario tener la versión 3.11.4 de Python y tener Git instalado en el sistema operativo. Se deben seguir estos pasos para la correcta instalación:
 
-- Primero se clona este repositorio de forma local en la ubicación deseada. Esto va a generar una carpeta `proyect_hackaboss` que contiene todos los archivos y carpetas del proyecto.
+- Clone este repositorio de forma local en la ubicación deseada. Esto generará una carpeta `project_hackaboss` que contiene todos los archivos y carpetas del proyecto:
 ```sh
 git clone https://github.com/cuicuidev/project_hackaboss
-
 ```
 
-- Después, hay que crear el entorno virtual con el siguiente comando:
+- A continuación, cree el entorno virtual:
 ```sh
 python -m venv .env
-
 ```
 
-- Deben además desactivar el entorno de Anaconda en caso de tenerlo instalado.
+- **Nota**: Si tiene instalado Anaconda, desactive su entorno:
 ```sh
 conda deactivate
-
 ```
 
-- Acto seguido, activan el entorno recien instalado.
-```sh
-source ./.env/bin/activate
+- Active el entorno virtual que acaba de instalar:
 
-```
+  **Para Linux/macOS**:
+  ```sh
+  source ./.env/bin/activate
+  ```
 
-- Por último, instalan todas las dependencias del proyecto en el entorno virtual.
+  **Para usuarios de Windows en cmd (Símbolo de Sistema)**:
+  ```sh
+  .\.env\Scripts\activate
+  ```
+
+  **Para usuarios de Windows en PowerShell**:
+  ```sh
+  .\.env\Scripts\Activate.ps1
+  ```
+
+- Finalmente, instale todas las dependencias del proyecto en el entorno virtual:
 ```sh
 pip install -r requirements.txt
-
 ```
 
-Ya están listos para trabajar!!!
+¡Ya está listo para trabajar!
