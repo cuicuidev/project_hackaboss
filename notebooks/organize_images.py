@@ -26,10 +26,3 @@ def sort_images_into_folders(root_path, categories):
                 shutil.move(src_path, dest_path)
             else:
                 print(f"Could not extract car make from {image_file}")
-
-# Define the root path and categories
-root_path = 'notebooks/car_make_images'
-categories = ['train', 'test', 'val']
-
-# Call the function
-sort_images_into_folders(root_path, categories)
