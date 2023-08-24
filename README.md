@@ -2,7 +2,7 @@
 
 ### Instalación
 
-Para poder trabajar con este repositorio, es necesario tener la versión 3.11.4 de Python y tener Git instalado en el sistema operativo. Se deben seguir estos pasos para la correcta instalación:
+Para poder trabajar con este repositorio, es necesario tener la versión 3.10.X de Python y tener Git instalado en el sistema operativo. Se deben seguir estos pasos para la correcta instalación:
 
 - Clone este repositorio de forma local en la ubicación deseada. Esto generará una carpeta `project_hackaboss` que contiene todos los archivos y carpetas del proyecto:
 ```sh
