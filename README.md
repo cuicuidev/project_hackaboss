@@ -50,8 +50,8 @@ pip install -r requirements.txt
 
 ## Métricas actuales del modelo:
 ### Loss Plot
-![Loss Plot](../assets/figures/loss.html)
+![Loss Plot](../assets/figures/loss.png)
 ### Acc Plot
-![Acc Plot](../assets/figures/acc.html)
+![Acc Plot](../assets/figures/acc.png)
 ### F1 Plot
-![F1 Plot](../assets/figures/f1.html)
+![F1 Plot](../assets/figures/f1.png)
