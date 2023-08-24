@@ -48,10 +48,7 @@ pip install -r requirements.txt
 
 ¡Ya está listo para trabajar!
 
-
-## 
-
-Métricas actuales del modelo:
+## Métricas actuales del modelo:
 ### Loss Plot
 ![Loss Plot](../assets/figures/loss.html)
 ### Acc Plot
