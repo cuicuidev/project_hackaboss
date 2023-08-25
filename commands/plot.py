@@ -6,8 +6,10 @@ import time
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-hist = pd.read_csv('history.csv')
-hist.columns = ['Epoch', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score']
+def read_hist():
+    hist = pd.read_csv('history.csv')
+    hist.columns = ['Epoch', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score']
+    return hist
 
 def create_seaborn_figure(dataframe, columns, fig_name):
     print(f"Creating figure: {fig_name}")
@@ -36,9 +38,7 @@ def update_readme():
 
     # Load data
     print("Loading data...")
-    hist = pd.read_csv('history.csv')
-    hist.columns = ['Epoch', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score']
-    
+    hist = read_hist()
     # Create and save new Plotly figures
     figures_data = [
         {'data': hist, 'columns': ['Loss', 'Val_Loss'], 'name': 'loss'},
