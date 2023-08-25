@@ -4,8 +4,8 @@ import tensorflow as tf
 import glob
 from keras import backend as K
 
-from commands.auto_git import git_auto_commit
-from commands.plot import update_readme
+from commands.git import git_auto_commit
+from commands.history_plot import update_readme
 
 def train_and_save(model, train_data, val_data, epochs, save_interval, model_save_path, history_save_path, custom_metrics=None, custom_optimizer=None, push = False):
     """
