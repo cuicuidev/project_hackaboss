@@ -1,5 +1,5 @@
 import argparse
-from commands import reset, train
+from commands import reset, train, sort
 
 def main():
     parser = argparse.ArgumentParser(description = 'pipeline.py commands')
@@ -17,6 +17,8 @@ def main():
     reset_command = subparsers.add_parser(name = 'reset', help = 'Use reset to reset the current model. Chose --hard for hard reset and delete the current model and its history.')
     reset_command.add_argument('--hard', action = 'store_true')
 
+    sort_command = subparsers.add_parser(name = 'sort', help = 'Sorts a newly imported car_make_images folder so it can be yielded by flow_from_directory method.')
+    
     # Parse arguments
     args = parser.parse_args()
     
@@ -25,6 +27,8 @@ def main():
         train.run(args.epochs, args.save_interval, args.push)
     elif args.command == 'reset':
         reset.run(args.hard)
+    elif args.command == 'sort':
+        sort.run()
     else:
         print('Invalid command. Use --help for usage information.')
 

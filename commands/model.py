@@ -55,9 +55,6 @@ test_generator = test_data_generator.flow_from_directory(testing_path,
                                                          color_mode = 'grayscale',
                                                          )
 
-
-
-
 with tf.device("/GPU:0"):
     model = Sequential()
 

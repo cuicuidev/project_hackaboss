@@ -2,6 +2,11 @@ import os
 import shutil
 import re
 
+def run():
+    sort_images_into_folders(root_path = "./car_make_images",
+                             categories = ["train", "test", "val"]
+                             )
+
 def sort_images_into_folders(root_path, categories):
     for category in categories:  # loop over 'train', 'test', 'val'
         category_path = os.path.join(root_path, category)
@@ -27,7 +32,7 @@ def sort_images_into_folders(root_path, categories):
             else:
                 print(f"Could not extract car make from {image_file}")
 
-if __name__ == '__sort_images_into_folders__':
-    sort_images_into_folders(root_path = "notebooks/car_make_images",
+if __name__ == '__main__':
+    sort_images_into_folders(root_path = "./car_make_images",
                              categories = ["train", "test", "val"]
                              )
