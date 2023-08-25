@@ -28,9 +28,9 @@ training_data_generator = ImageDataGenerator(rescale = 1./255,
 validation_data_generator = ImageDataGenerator(rescale = 1./255)
 test_data_generator = ImageDataGenerator(rescale = 1./255)
 
-height = 400
-width = 400
-batch_size = 30
+height = round(560 / 1.5)
+width = round(950 / 1.5)
+batch_size = 16
 num_classes = 39
 
 
