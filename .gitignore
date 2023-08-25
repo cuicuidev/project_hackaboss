@@ -6,6 +6,7 @@ __pycache__/
 car_make_images/
 
 *.csv
+!history.csv
 
 *.h5
 !model.h5
