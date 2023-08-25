@@ -1,8 +1,6 @@
 /.env/
-/.save/
 
 __pycache__/
-.ipynb_checkpoints/
 car_make_images/
 
 *.csv
