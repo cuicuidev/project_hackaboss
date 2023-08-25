@@ -5,6 +5,7 @@ import glob
 from keras import backend as K
 
 from commands.auto_git import git_auto_commit
+from commands.plot import update_readme
 
 def train_and_save(model, train_data, val_data, epochs, save_interval, model_save_path, history_save_path, custom_metrics=None, custom_optimizer=None, push = False):
     """
@@ -78,8 +79,11 @@ def train_and_save(model, train_data, val_data, epochs, save_interval, model_sav
             print(f"Saved model and history at epoch {epoch}")
 
             if push:
+                print("Updating README.md")
+                update_readme()
                 print("Pushing changes to GitHub")
                 git_auto_commit('0.0-testing', epoch)
+                print("Done")
 
 def f1_score(y_true, y_pred):
     true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
