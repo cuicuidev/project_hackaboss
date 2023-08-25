@@ -63,7 +63,13 @@ def train_and_save(model, train_data, val_data, epochs, save_interval, model_sav
         history_data = [epoch] + [history.history[key][0] for key in history.history]
         temp_history_data.append(history_data)
 
-        if epoch % save_interval == 0 or epoch == epochs + initial_epoch:
+        def save():
+            try:
+                return epoch % save_interval == 0
+            except:
+                return epoch == epochs + initial_epoch
+
+        if save():
             model_file_path = os.path.join(model_save_path, f"model_e{epoch}.h5")
             model.save(model_file_path)
 

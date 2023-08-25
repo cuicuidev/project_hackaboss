@@ -28,9 +28,9 @@ training_data_generator = ImageDataGenerator(rescale = 1./255,
 validation_data_generator = ImageDataGenerator(rescale = 1./255)
 test_data_generator = ImageDataGenerator(rescale = 1./255)
 
-height = 280
-width = 470
-batch_size = 8  
+height = 400
+width = 400
+batch_size = 30
 num_classes = 39
 
 
@@ -61,23 +61,23 @@ with tf.device("/GPU:0"):
     model.add(Input(shape=(height, width, 1)))
 
     # Conv Blocks (Added more filters)
-    for filters in [32, 64, 128, 256, 512]:  # Added a 512-filter layer
-        model.add(Conv2D(filters=filters, kernel_size=5, padding='same', kernel_initializer='he_normal'))
+    for filters in [32, 64, 128, 256]:
+        model.add(Conv2D(filters=filters, kernel_size=3, padding='same', kernel_initializer='he_normal'))
         model.add(tf.keras.layers.ReLU())
         model.add(MaxPooling2D(pool_size=2))
 
     # Flatten and Fully Connected Layers
     model.add(Flatten())
 
-    for neurons in [1024, 512, 256, 128, 64]:
-        model.add(Dense(neurons, activation='relu', kernel_initializer='he_normal'))  # Increased neurons
-        model.add(Dropout(0.15))  # Increased dropout rate
+    for neurons in [512, 256]:
+        model.add(Dense(neurons, activation='relu', kernel_initializer='he_normal'))
+        model.add(Dropout(0.15))
 
     # Output layer
     model.add(Dense(num_classes, activation='softmax', kernel_initializer='he_normal'))
 
     lr_schedule = tf.keras.optimizers.schedules.ExponentialDecay(
-        initial_learning_rate=0.005,
+        initial_learning_rate=0.001,
         decay_steps=10000,
         decay_rate=0.90)
     opt = Adam(learning_rate=lr_schedule)
