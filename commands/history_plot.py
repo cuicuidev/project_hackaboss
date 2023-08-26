@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def read_hist():
     hist = pd.read_csv('history.csv')
-    hist.columns = ['Epoch', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score']
+    hist.columns = ['Epoch', 'Batch_Size', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score']
     return hist
 
 def create_seaborn_figure(dataframe, columns, fig_name):
