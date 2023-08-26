@@ -1,8 +1,8 @@
 import tensorflow as tf
 from keras.optimizers import Adam
 
-HEIGHT = 20 # round(560 / 2)
-WIDTH = 20 # round(950 / 2)
+HEIGHT = round(560 / 2)
+WIDTH = round(950 / 2)
 N_CATEGORIES = 39
 
 
