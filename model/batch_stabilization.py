@@ -22,10 +22,10 @@ def is_converging(history, n_last_epochs, degree=10):
     
     epsilon = math.tan(angle_in_radians)
     
-    if len(history) < n_last_epochs:
+    if len(history) < n_last_epochs + 1:
         return True
     
-    last_n_epochs = history[-n_last_epochs:]
+    last_n_epochs = history[-n_last_epochs + 1:]
     
     last_n_accuracies = [float(row[3]) for row in last_n_epochs]
     
