@@ -30,7 +30,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
     hist_path = 'history.csv'
 
     os.makedirs('models', exist_ok=True)
-    
+
     if os.path.exists(hist_path):
         history = read_history(hist_path)
         initial_epoch = int(history[-1][0])
@@ -46,7 +46,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
     else:
         history = create_history(hist_path, custom_metrics)
         initial_epoch = 0
-        batch_size = 256
+        batch_size = 512
 
         model = compile_model(model, custom_metrics, custom_optimizer)
 
