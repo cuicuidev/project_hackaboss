@@ -55,3 +55,7 @@ pip install -r requirements.txt
 ![Acc Plot](./assets/figures/acc.png)
 ### F1 Plot
 ![F1 Plot](./assets/figures/f1.png)
+### Vram Plot
+![Vram Plot](./assets/figures/vram.png)
+### Batch_size Plot
+![Batch_size Plot](./assets/figures/batch_size.png)

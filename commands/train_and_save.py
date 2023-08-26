@@ -6,6 +6,7 @@ from keras import backend as K
 
 from commands.git import git_auto_commit
 from commands.history_plot import update_readme
+from commands.vram_monitor import VRAMMonitor
 from model.data import flow_from_directory
 
 def read_history(hist_path):
@@ -22,6 +23,7 @@ def create_history(hist_path, custom_metrics):
                 metric_name = metric.__name__
                 columns.append(metric_name)
                 columns.append("Val_" + metric_name)
+        columns.extend(['avg_vram_usage', 'min_vram_usage', 'max_vram_usage'])
         csv_writer.writerow(columns)
     return list()
 
@@ -70,7 +72,9 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
 
         batch_size = new_batch_size
 
-        hist = model.fit(training_generator, validation_data = validation_generator)
+        vram_monitor = VRAMMonitor()
+
+        hist = model.fit(training_generator, validation_data = validation_generator, callbacks = [vram_monitor])
         hist_data = [epoch, batch_size] + [hist.history[key][0] for key in hist.history]
 
         temp_hist_data.append(hist_data)
