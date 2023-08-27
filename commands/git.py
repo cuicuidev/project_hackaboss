@@ -2,6 +2,9 @@ import subprocess
 
 def git_auto_commit(version, epoch):
     try:
+        # Run 'git pull origin main'
+        subprocess.run(['git', 'pull', 'origin', 'main'], check=True)
+
         # Run 'git add .'
         subprocess.run(['git', 'add', '.'], check=True)
 
