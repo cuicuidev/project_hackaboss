@@ -48,7 +48,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
     else:
         history = create_history(hist_path, custom_metrics)
         initial_epoch = 0
-        batch_size = 45
+        batch_size = 32
 
         model = compile_model(model, custom_metrics, custom_optimizer)
 

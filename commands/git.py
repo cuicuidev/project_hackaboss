@@ -17,3 +17,6 @@ def git_auto_commit(version, epoch):
         print("Git operations completed successfully.")
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {str(e)}")
+
+if __name__ == '__main__':
+    git_auto_commit('version-manual', -1)
