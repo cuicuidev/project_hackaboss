@@ -7,9 +7,9 @@ SCALE = 0.8
 HEIGHT = round(560 * SCALE)
 WIDTH = round(950 * SCALE)
 N_CATEGORIES = 39
-BATCH_SIZE = 16
+BATCH_SIZE = 32
 MIN_BATCH_SIZE = 8
-MAX_BATCH_SIZE = 16
+MAX_BATCH_SIZE = 32
 
 
 SCHEDULE = tf.keras.optimizers.schedules.ExponentialDecay(

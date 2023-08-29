@@ -8,7 +8,7 @@ from commands.git import git_auto_commit
 from commands.history_plot import update_readme
 from commands.vram_monitor import VRAMMonitor
 from model.data import flow_from_directory
-from model.settings import VERSION
+from model.settings import VERSION, BATCH_SIZE
 
 def read_history(hist_path):
     with open(hist_path) as csvfile:
@@ -49,7 +49,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
     else:
         history = create_history(hist_path, custom_metrics)
         initial_epoch = 0
-        batch_size = 32
+        batch_size = BATCH_SIZE
 
         model = compile_model(model, custom_metrics, custom_optimizer)
         print(model.summary())
