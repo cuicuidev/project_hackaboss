@@ -1,9 +1,11 @@
 import numpy as np
 import math
 
+from model.settings import BATCH_SIZE, MIN_BATCH_SIZE, MAX_BATCH_SIZE
 
 
-def stabilize_batch_size(converging, batch_size, min_batch_size = 16, max_batch_size = 45):
+
+def stabilize_batch_size(converging, batch_size = BATCH_SIZE, min_batch_size = MIN_BATCH_SIZE, max_batch_size = MAX_BATCH_SIZE  ):
 
     can_increase = batch_size < max_batch_size
     can_decrease = batch_size > min_batch_size

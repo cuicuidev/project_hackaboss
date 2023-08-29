@@ -52,6 +52,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
         batch_size = 32
 
         model = compile_model(model, custom_metrics, custom_optimizer)
+        print(model.summary())
 
     temp_hist_data = []
 
