@@ -1,13 +1,16 @@
 import tensorflow as tf
 from keras.optimizers import Adam
 
-HEIGHT = round(560 / 2)
-WIDTH = round(950 / 2)
+VERSION = 'version-0.3'
+
+SCALE = 0.8
+HEIGHT = round(560 / SCALE)
+WIDTH = round(950 / SCALE)
 N_CATEGORIES = 39
 
 
 SCHEDULE = tf.keras.optimizers.schedules.ExponentialDecay(
-    initial_learning_rate=0.001,
+    initial_learning_rate=0.01,
     decay_steps=10000,
     decay_rate=0.90)
 

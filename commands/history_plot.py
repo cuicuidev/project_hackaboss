@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def read_hist():
     hist = pd.read_csv('history.csv')
-    hist.columns = ['Epoch', 'Batch_Size', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score', 'avg_vram_usage', 'min_vram_usage', 'max_vram_usage']
+    hist.columns = ['Epoch', 'Batch_Size', 'Loss', 'Accuracy', 'f1_score', 'Val_Loss', 'Val_Accuracy', 'Val_f1_score', ] # 'avg_vram_usage', 'min_vram_usage', 'max_vram_usage']
     return hist
 
 def create_seaborn_figure(dataframe, columns, fig_name):
@@ -31,7 +31,7 @@ def update_readme():
         {'data': hist, 'columns': ['Loss', 'Val_Loss'], 'name': 'loss'},
         {'data': hist, 'columns': ['Accuracy', 'Val_Accuracy'], 'name': 'acc'},
         {'data': hist, 'columns': ['f1_score', 'Val_f1_score'], 'name': 'f1'},
-        {'data': hist, 'columns': ['min_vram_usage', 'max_vram_usage', 'avg_vram_usage'], 'name': 'vram'},
+        # {'data': hist, 'columns': ['min_vram_usage', 'max_vram_usage', 'avg_vram_usage'], 'name': 'vram'},
         {'data': hist, 'columns': ['Batch_Size'], 'name': 'batch_size'},
     ]
     
