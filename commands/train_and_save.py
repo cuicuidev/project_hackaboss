@@ -9,6 +9,8 @@ from commands.history_plot import update_readme
 from commands.vram_monitor import VRAMMonitor
 from model.data import flow_from_directory
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 def read_history(hist_path):
     with open(hist_path) as csvfile:
         csv_reader = csv.reader(csvfile)
@@ -51,6 +53,7 @@ def train_and_save(model, epochs, save_interval = None, custom_metrics = None, c
         batch_size = 32
 
         model = compile_model(model, custom_metrics, custom_optimizer)
+        print(model.summary())
 
     temp_hist_data = []
 
