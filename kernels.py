@@ -4,6 +4,7 @@ import glob
 import matplotlib.pyplot as plt
 import os
 import keras.backend as K
+import math
 
 from model.settings import HEIGHT, WIDTH
 
@@ -41,18 +42,32 @@ def apply_max_pooling(intermediate_output):
     return pooled_output
 
 def visualize_output(intermediate_output):
-    num_filters = min(intermediate_output.shape[-1], 3)  # Get up to 3 filters.
-    fig, axes = plt.subplots(1, num_filters, figsize=(5 * num_filters, 5))
+    num_filters = intermediate_output.shape[-1]
+    max_filters_to_show = 25  # You can change this as per your need
     
-    for i in range(num_filters):
-        if num_filters == 1:
-            ax = axes
+    # If there are more filters than the max allowed, sample from them
+    if num_filters > max_filters_to_show:
+        step = num_filters // max_filters_to_show
+        indices = np.arange(0, num_filters, step)[:max_filters_to_show]
+    else:
+        indices = np.arange(num_filters)
+    
+    grid_size = math.ceil(math.sqrt(len(indices)))
+    
+    fig, axes = plt.subplots(grid_size, grid_size, figsize=(5 * grid_size, 5 * grid_size))
+    
+    for i in range(grid_size * grid_size):
+        row = i // grid_size
+        col = i % grid_size
+        
+        ax = axes[row, col]
+        
+        if i < len(indices):
+            ax.imshow(intermediate_output[0, :, :, indices[i]], cmap='gray')
+            ax.set_title(f'Filter {indices[i]}')
         else:
-            ax = axes[i]
-        ax.imshow(intermediate_output[0, :, :, i], cmap='gray')
-        ax.set_title(f'Filter {i}')
-        ax.axis('off')
-
+            ax.axis('off')  # Turn off axes for empty subplots.
+        
     plt.show()
 
 def recursive_visualization(model, input_img, layer_num=0):
@@ -84,7 +99,7 @@ def recursive_visualization(model, input_img, layer_num=0):
 
 
 
-path = './car_make_images/train/AlfaRomeo/1_AlfaRomeo.jpg'
+path = './car_make_images/train/AlfaRomeo/44_AlfaRomeo.jpg'
 raw = tf.io.read_file(path)
 img = tf.image.decode_image(raw)
 img = tf.image.resize(img, (HEIGHT, WIDTH))
@@ -101,23 +116,6 @@ custom_metrics = [f1_score]
 if latest_model is not None:
     print(f"Loading model: {latest_model}")
     model = tf.keras.models.load_model(latest_model, custom_objects={metric.__name__: metric for metric in custom_metrics})
-
-# Squeeze the last dimension to convert the image to 2D
-img_2d = tf.squeeze(img).numpy()
-
-filters = model.layers[0].weights[0].numpy()
-filters = filters - filters.min()
-filters = filters / filters.max()
-
-# Get the number of output channels (filters)
-n_filters = filters.shape[3]
-
-fig, axes = plt.subplots(1, n_filters, figsize=(20, 20))
-for i in range(n_filters):
-    axes[i].imshow(filters[:, :, 0, i], cmap='gray')
-    axes[i].set_title(f'Filter {i}')
-    axes[i].axis('off')
-plt.show()
 
 def conv2D(image, kernel):
     # Get dimensions
