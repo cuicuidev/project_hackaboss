@@ -5,6 +5,7 @@ car_make_images/
 
 *.csv
 !history.csv
+!category_counts.csv
 
 *.h5
 !model.h5
