@@ -1,4 +1,3 @@
-from components.section import Section
 import streamlit as st
 
 def aboutRoute():
