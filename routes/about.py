@@ -30,6 +30,6 @@ def contactUs():
     
     jac.write('#### Jacobo Brandariz Morano')
     jac.write('_Data Scientist_')
-    jac.write('Email :e-mail:: **___________**')
-    jac.write('LinkedIn :page_facing_up:: [**___________**](https://www.linkedin.com/)')
+    jac.write('Email :e-mail:: **jacobobm.dsp@gmail.com**')
+    jac.write('LinkedIn :page_facing_up:: [**JacoboBM**](https://www.linkedin.com/in/jacobo-brandariz-morano)')
     jac.write('GitHub :cat::computer:: [**JacoboBM**](https://github.com/JacoboBM)')
