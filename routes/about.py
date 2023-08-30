@@ -33,4 +33,4 @@ def contactUs():
     jac.write('_Data Scientist_')
     jac.write('Email :e-mail:: **___________**')
     jac.write('LinkedIn :page_facing_up:: [**___________**](https://www.linkedin.com/)')
-    jac.write('GitHub :cat::computer:: [**___________**](https://github.com/)')
+    jac.write('GitHub :cat::computer:: [**JacoboBM**](https://github.com/JacoboBM)')
