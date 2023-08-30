@@ -12,13 +12,21 @@ class Section:
 
     def render(self):
         if self._hasMedia():
-            col1, col2 = st.columns(self.flex)[::-1] if self.media_on_left else st.columns(self.flex)
-
             if self._hasTitle():
-                col1.title(self.title)
+                if not self.media_on_left:
+                    st.title(self.title)
+                else:
+                    title1, _ = st.columns(self.flex)[::-1]
+                    title1.title(self.title)
 
             if self._hasHeader():
-                col1.header(self.header)
+                if not self.media_on_left:
+                    st.header(self.header)
+                else:
+                    header1, _ = st.columns(self.flex)[::-1]
+                    header1.header(self.header)
+                
+            col1, col2 = st.columns(self.flex)[::-1] if self.media_on_left else st.columns(self.flex)
 
             col1.write(self.text)
             self._renderMedia(col2)
