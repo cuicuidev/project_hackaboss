@@ -1,17 +1,21 @@
 from components.section import Section
 import streamlit as st
 
-about_project = Section(text = 'Esta aplicación web forma parte del último proyecto de la tercera edición del bootcamp de Data Science de [Hackaboss](https://www.hackaboss.com/). \
-                        Somos Jacobo y Dmitry, y siendo tan solo un equipo de dos personas, hemos estado invertiendo nuestro tiempo libre en \
-                        hacer este proyecto realidad. Ambos apasionados por la tecnología, la programación y la inteligencia artificial, hemos decidido poner aquí en práctica todo lo que \
-                        aprendimos acerca del aprendizaje profundo y las redes neurales de convolución durante el bootcamp.',
-                        title = 'Acerca de :mag:')
-
 def aboutRoute():
-    about_project.render()
+    about()
     st.write('---')
     contactUs()
 
+def about():
+    st.title('Acerca de :mag:')
+    st.write('Esta aplicación web forma parte del último proyecto del bootcamp de Data Science de [Hackaboss](https://www.hackaboss.com/). \
+             Somos Jacobo y Dmitry, dos muchachos muy apasionados por la ciencia de datos y la tecnología de la información. \
+             Juntos hemos entrenado una red neural que permite clasificar turismos por su marca de fabricante. Asimismo, hemos creado esta aplicación web como medio \
+             para interactuar con el modelo y documentar su desarrollo, las técnicas que hemos utilizado y las barreras que hemos tenido \
+             que superar en el proceso. Ha sido una dura e intensa trayectoria, pero no solo hemos podido aplicar un montón de conocimientos adquiridos durante \
+             nuestra formación, sino que también hemos expandido nuestros conocimientos acerca del aprendizaje profundo. \
+             Si bien el modelo final no está a la altura de nuestas expectativas, el nivel en el que hemos podido profundizar en la comprension de \
+             las redes neurales convolutivas las ha superado.')
 
 def contactUs():
     st.write('## Contáctanos :email:')
