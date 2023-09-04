@@ -21,8 +21,8 @@ def contactUs():
     dmi, jac = st.columns((1,1))
 
     dmi.write('#### Dmitry Ryzhenkov')
-    dmi.write('_Data Scientist, Software Engeneer_')
-    dmi.write('Email :e-mail:: **dmitryryzhenkov.dev@gmail.com**')
+    dmi.write('_Data Scientist, Software Developer_')
+    dmi.write('Email :e-mail:: **dmitryryzhenkov@cuicui.dev**')
     dmi.write('LinkedIn :page_facing_up:: [**cuicuidev**](https://www.linkedin.com/in/cuicuidev/)')
     dmi.write('GitHub :cat::computer:: [**cuicuidev**](https://github.com/cuicuidev)')
     dmi.write('Página web :newspaper:: [**cuicui.dev**](https://cuicui.dev)')
