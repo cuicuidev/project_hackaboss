@@ -32,7 +32,7 @@ with tf.device("/GPU:0"):
 
     for neurons in [128]:
         model.add(Dense(neurons, activation='relu', kernel_initializer='he_normal'))
-        # model.add(Dropout(0.15))
+        model.add(Dropout(0.15))
 
     # Output layer
     model.add(Dense(N_CATEGORIES, activation='softmax', kernel_initializer='he_normal'))
