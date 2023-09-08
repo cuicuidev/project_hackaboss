@@ -10,6 +10,8 @@ from commands.vram_monitor import VRAMMonitor
 from model.data import flow_from_directory
 from model.settings import VERSION, BATCH_SIZE
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 def read_history(hist_path):
     with open(hist_path) as csvfile:
         csv_reader = csv.reader(csvfile)
